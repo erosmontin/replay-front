@@ -44,8 +44,8 @@ const Home: React.FC = () => {
   }, [selectedBucket]);
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10">
-      <h1 className="text-3xl font-bold text-center mb-8">S3 Video Gallery</h1>
+<div className="min-h-screen bg-gray-900 py-10">
+        <h1 className="text-3xl font-bold text-center mb-8">Highlight User xx</h1>
 
       <div className="flex justify-center mb-8">
         <select
@@ -64,10 +64,15 @@ const Home: React.FC = () => {
         </select>
       </div>
 
+
       <div className="flex flex-col items-center space-y-6">
         {videos.map((video) => (
-          <div key={video.key} className="w-full max-w-xl">
+          <div key={video.key} className="w-full max-w-xl bg-gray-800 p-4 rounded-lg shadow-lg">
+            <h2 className="text-lg font-semibold mb-2 text-center">{video.key}</h2>
             <VideoPlayer src={video.url} />
+            <p className="text-sm text-gray-400 mt-4 text-center">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
+            </p>
           </div>
         ))}
       </div>
