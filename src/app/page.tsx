@@ -52,8 +52,10 @@ const Home: React.FC = () => {
 
   return (
 <div className="min-h-screen bg-gray-900 py-10">
-        <h1 className="text-3xl font-bold text-center mb-8">Personalized Highlight User xx</h1>
-
+<div className="flex justify-between items-center px-8 mb-8">
+        <img src="/logo.png" alt="Logo" className="h-12" />
+        <h1 className="text-4xl font-bold text-center">Personalized HIghlights Eros Montin</h1>
+      </div>
       <div className="flex justify-center mb-8">
         <select
           value={selectedBucket || ''}
