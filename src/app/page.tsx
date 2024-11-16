@@ -93,8 +93,8 @@ const Home: React.FC = () => {
               >
                 Inspect
               </a>
-            </div>
-            <div className="flex justify-center mt-4 space-x-2">
+            
+            {/* <div className="flex justify-center mt-4 space-x-2"> */}
               <FacebookShareButton url={video.url} quote={video.key}>
                 <FacebookIcon size={32} round />
               </FacebookShareButton>
