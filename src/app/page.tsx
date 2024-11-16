@@ -2,7 +2,14 @@
 
 import React, { useEffect, useState } from 'react';
 import VideoPlayer from './components/VideoPlayer';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, LineElement, PointElement, Title, Tooltip, Legend } from 'chart.js';
+import { Bar, Line } from 'react-chartjs-2';
 
+ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, PointElement, Title, Tooltip, Legend);
+
+const generateRandomData = () => {
+  return Array.from({ length: 10 }, () => Math.floor(Math.random() * 100));
+};
 interface Video {
   key: string;
   url: string;
@@ -45,7 +52,7 @@ const Home: React.FC = () => {
 
   return (
 <div className="min-h-screen bg-gray-900 py-10">
-        <h1 className="text-3xl font-bold text-center mb-8">Highlight User xx</h1>
+        <h1 className="text-3xl font-bold text-center mb-8">Personalized Highlight User xx</h1>
 
       <div className="flex justify-center mb-8">
         <select
@@ -73,7 +80,39 @@ const Home: React.FC = () => {
             <p className="text-sm text-gray-400 mt-4 text-center">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
             </p>
+            <div className="flex-1 ml-4">
+              <h3 className="text-md font-semibold mb-2 text-center">Player 1n the scene</h3>
+              <Line
+                data={{
+                  labels: Array.from({ length: 10 }, (_, i) => `minutes ${i + 1}`),
+                  datasets: [
+                    {
+                      label: 'Random Data',
+                      data: generateRandomData(),
+                      borderColor: 'rgba(75, 192, 192, 1)',
+                      backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    },
+                  ],
+                }}
+              />
+              <h3 className="text-md font-semibold mb-2 text-center mt-4">Avg Rank</h3>
+              <Bar
+                data={{
+                  labels: Array.from({ length: 10 }, (_, i) => `Label ${i + 1}`),
+                  datasets: [
+                    {
+                      label: 'Random Data',
+                      data: generateRandomData(),
+                      backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                      borderColor: 'rgba(153, 102, 255, 1)',
+                      borderWidth: 1,
+                    },
+                  ],
+                }}
+              />
+            </div>
           </div>
+          
         ))}
       </div>
     </div>
