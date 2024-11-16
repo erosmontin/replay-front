@@ -60,7 +60,7 @@ const Home: React.FC = () => {
         <select
           value={selectedBucket || ''}
           onChange={(e) => setSelectedBucket(e.target.value)}
-          className="p-2 border rounded"
+          className="p-2 border rounded rounded bg-gray-800 text-white"
         >
           <option value="" disabled>
             Select a bucket
@@ -82,6 +82,17 @@ const Home: React.FC = () => {
             <p className="text-sm text-gray-400 mt-4 text-center">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.
             </p>
+            <div className="flex justify-center mt-4">
+           <a
+                href={video.url}
+                download={video.key}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+              >
+                Inspect
+              </a>
+            </div>
             <div className="flex-1 ml-4">
               <h3 className="text-md font-semibold mb-2 text-center">Player 1n the scene</h3>
               <Line
