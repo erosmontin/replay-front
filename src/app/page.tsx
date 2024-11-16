@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import VideoPlayer from './components/VideoPlayer';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, LineElement, PointElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar, Line } from 'react-chartjs-2';
+import { FacebookShareButton, TwitterShareButton, LinkedinShareButton, WhatsappShareButton, WechatShareButton, FacebookIcon, TwitterIcon, LinkedinIcon, WhatsappIcon, WechatIcon } from 'react-share';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, PointElement, Title, Tooltip, Legend);
 
@@ -92,6 +93,23 @@ const Home: React.FC = () => {
               >
                 Inspect
               </a>
+            </div>
+            <div className="flex justify-center mt-4 space-x-2">
+              <FacebookShareButton url={video.url} quote={video.key}>
+                <FacebookIcon size={32} round />
+              </FacebookShareButton>
+              <TwitterShareButton url={video.url} title={video.key}>
+                <TwitterIcon size={32} round />
+              </TwitterShareButton>
+              <LinkedinShareButton url={video.url} title={video.key}>
+                <LinkedinIcon size={32} round />
+              </LinkedinShareButton>
+              <WhatsappShareButton url={video.url} title={video.key}>
+                <WhatsappIcon size={32} round />
+              </WhatsappShareButton>
+              {/* <WechatShareButton url={video.url} title={video.key}>
+                <WechatIcon size={32} round />
+              </WechatShareButton> */}
             </div>
             <div className="flex-1 ml-4">
               <h3 className="text-md font-semibold mb-2 text-center">Player 1n the scene</h3>
