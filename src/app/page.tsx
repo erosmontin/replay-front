@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import VideoPlayer from './components/VideoPlayer';
 import { Chart as ChartJS, CategoryScale, LinearScale, LineElement, PointElement, Title, Tooltip, Legend } from 'chart.js';
 import { Line } from 'react-chartjs-2';
@@ -79,7 +80,7 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-900 py-10">
       <div className="flex justify-between items-center px-8 mb-8">
-        <img src="/logo.png" alt="Logo" className="h-12" />
+        <Image src="/logo.png" alt="Logo" width={48} height={48} />
         <h1 className="text-4xl font-bold text-center text-white">Personalized Highlights</h1>
       </div>
       <div className="flex justify-center mb-8">
@@ -128,7 +129,7 @@ const Home: React.FC = () => {
               >
                 Inspect
               </a>
-              <FacebookShareButton url={video.url} quote={video.key}>
+              <FacebookShareButton url={video.url} hashtag={`#${video.key}`}>
                 <FacebookIcon size={32} round />
               </FacebookShareButton>
               <TwitterShareButton url={video.url} title={video.key}>
