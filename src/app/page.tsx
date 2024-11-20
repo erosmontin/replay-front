@@ -78,7 +78,7 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 py-10">
+    <div className="min-h-screen bg-gray-600 py-10">
       <div className="flex justify-between items-center px-8 mb-8">
         <Image src="/logo.png" alt="Logo" width={48} height={48} />
         <h1 className="text-4xl font-bold text-center text-white">Personalized Highlights</h1>
