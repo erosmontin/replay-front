@@ -80,17 +80,14 @@ const Home: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-600 py-10">
       <div className="flex justify-between items-center px-8 mb-8">
-        <Image src="/logo.png" alt="Logo" width={48} height={48} />
-        <h1 className="text-4xl font-bold text-center text-white">Personalized Highlights</h1>
-      </div>
-      <div className="flex justify-center mb-8">
+        <Image src="/logo1.jpg" alt="Logo" width={200} height={200} />
         <select
           value={selectedBucket || ''}
           onChange={(e) => setSelectedBucket(e.target.value)}
-          className="p-2 border rounded bg-gray-800 text-white"
+          className="p-2 border rounded bg-white text-black border-gray-300 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
         >
-          <option value="" disabled>
-            Select a bucket
+          <option value="" disabled className="text-lg font-semibold">
+            Select your Game
           </option>
           {buckets.map((bucket) => (
             <option key={bucket} value={bucket}>
@@ -98,6 +95,8 @@ const Home: React.FC = () => {
             </option>
           ))}
         </select>
+        <h1 className="text-3xl font-semibold text-white">Personalized Highlights</h1>
+
       </div>
 
       <div className="flex flex-col items-center space-y-6">
